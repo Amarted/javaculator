@@ -1,0 +1,12 @@
+.btn {
+	-fx-background-color: gainsboro;
+	-fx-border-color: ghostwhite;
+	-fx-border-radius: 4px;
+	-fx-background-radius: 5px;
+}
+.btn:hover {
+	-fx-background-color: lightgray;
+}
+.btn:pressed {
+	-fx-background-color: darkgray;
+}

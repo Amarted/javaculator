@@ -38,6 +38,8 @@ public class Calculator extends Application {
 		
 		// Устанавливаем основной слой сцены и размер окна
 		Scene scene = new Scene(rootPane, appWidth, appHeight);
+		// Подключаем css		
+		scene.getStylesheets().add("css/style.css");
 		// Заголовок приложения
 		stage.setTitle(appName);
 		// Запрещаем изменение размера окна
@@ -112,7 +114,7 @@ public class Calculator extends Application {
 		pane.setVgap(5);
 		pane.setHgap(5);
 		// Создаём кнопки в цикле, и добавляем обработчик событий.
-		for ( String buttonText : buttons ) {
+		for ( final String buttonText : buttons ) {
 			Button button = new Button(buttonText);
 			button.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent e) {
@@ -122,6 +124,8 @@ public class Calculator extends Application {
 				}
 			});
 			button.setPrefWidth(40);
+			// Добавим css селектор
+			button.getStyleClass().add("btn");
 			pane.getChildren().add(button);
 		}
 		return (T)pane;
